@@ -1,5 +1,7 @@
 # Hugo e-Business-Card
-[![Made with Bulma](https://bulma.io/images/made-with-bulma.png)](https://bulma.io)
+<a href="https://bulma.io">
+<img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+</a>
 
 Generates a simple e-Business-Card using Hugo and Bulma.
 
