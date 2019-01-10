@@ -5,7 +5,7 @@
 
 Generates a simple e-Business-Card using Hugo and Bulma.
 
-![Screenshot](https://i.imgur.com/VD95lp3.png)
+![Screenshot](https://i.imgur.com/RIuuaUG.png)
 
 ## Customize
 Just modify `content/_index.md` and `static/logo.png` as well as favicon.ico (also look into the `config.yaml` file for things to adjust).
