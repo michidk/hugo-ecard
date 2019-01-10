@@ -1,0 +1,37 @@
+baseURL: "https://card.lohr-it.de"
+
+title: "Hugo eCard"
+languageCode: "en-us"
+
+enableEmoji: true
+enableRobotsTXT: false
+log: true
+watch: false
+summaryLength: 70
+canonifyurls: true
+
+blackfriday:
+  extensions:
+    - "hardLineBreak"
+
+privacy:
+  googleAnalytics:
+    anonymizeIP: true
+    respectDoNotTrack: true
+    useSessionStorage: true
+  youtube:
+    privacyEnhanced: true
+  disqus:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: true
+  vimeo:
+    disable: true
+
+taxonomies:
+
+params:
+  logo: "logo.png"
+  github: "https://github.com/michidk/hugo-ecard"

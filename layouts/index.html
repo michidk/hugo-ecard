@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{- .Params.Name -}}'s eCard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  </head>
+  <body>
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="column is-5 is-offset-3">
+                    <div class="box">
+                        <figure class="avatar has-text-centered">
+                            <img src="{{ .Site.Params.Logo }}" style="width: 128px; height: 128px">
+                        </figure>
+                        
+                        <h1 class="title is-1 has-text-centered">{{- .Params.Name -}}</h1>
+                        <p class="">{{- .Content -}}</p>
+                        
+                    </div>
+                    <p class="has-text-grey has-text-centered">
+                        {{- if .Params.LegalLink -}}
+                            {{- .Scratch.Add "linklist" (slice (print "<a href=" .Params.LegalLink ">Legal</a>")) -}}
+                        {{- end -}}
+                        {{- if .Params.PrivacyLink -}}
+                            {{- .Scratch.Add "linklist" (slice (print "<a href=" .Params.PrivacyLink ">Privacy Statement</a>")) -}}
+                        {{- end -}}
+                        {{- if .Params.WebsiteLink -}}
+                            {{- .Scratch.Add "linklist" (slice (print "<a href=" .Params.WebsiteLink ">Website</a>")) -}}
+                        {{- end -}}
+                        {{- if .Site.Params.Github -}}
+                            {{- .Scratch.Add "linklist" (slice (print "<a href=" .Site.Params.Github "><i class=\"fab fa-github\"></i> GitHub</a></a>")) -}}
+                        {{- end -}}
+                        {{- delimit (.Scratch.Get "linklist") "&nbsp;·&nbsp;" -}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{{- $data := .Get "data" -}}
+{{- $icon := .Get "icon" -}}
+{{- $link := .Get "link" -}}
+{{- $protocol := .Get "protocol" -}}
+{{- if $data -}}
+    <div class="card-data">
+        <i class="fas fa-{{ $icon }}"></i>
+        {{- if $link -}}
+            <a href="">
+        {{- else if $protocol -}}
+            <a href="{{ (print $protocol (replace (replace $data " " "") "+" "00")) | safeURL }}">
+        {{- end -}}
+                <span>{{ $data }}</span>
+        {{- if (or $link $protocol) -}}
+            </a>
+        {{- end -}}
+        <button class="copy" tabindex="1" data-clipboard-text={{ $data }}>
+            <i class="far fa-copy"></i>
+        </button>
+    </div>
+{{- end -}}
