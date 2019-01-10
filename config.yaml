@@ -1,4 +1,4 @@
-baseURL: "https://card.lohr-it.de"
+baseURL: "https://card.foo-bar.com"
 
 title: "Hugo eCard"
 languageCode: "en-us"
